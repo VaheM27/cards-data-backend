@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { CardsComponent } from 'src/components/cards/cards.component';
-import { TableComponent } from 'src/components/table/table.component';
-
 import { AppComponent } from './app.component';
+import { CardsComponent } from './components/cards/cards.component';
+import { TableComponent } from './components/table/table.component';
 
 @NgModule({
   declarations: [AppComponent, CardsComponent, TableComponent],

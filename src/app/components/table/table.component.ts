@@ -69,6 +69,7 @@ export class TableComponent implements OnInit {
   }
 
   openEditModal(item: any) {
-    this.modalService.open(EditModalComponent, { size: 'lg' });
+    const modalRef = this.modalService.open(EditModalComponent, { size: 'lg' });
+    modalRef.componentInstance.peopleList = this.peopleList;
   }
 }
