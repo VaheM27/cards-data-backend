@@ -1,0 +1,14 @@
+<table class="comicGreen">
+  <tr>
+    <th>Email</th>
+    <th>Phone</th>
+  </tr>
+  <tbody>
+    <tr *ngFor="let item of peopleList; let i = index">
+      <td>{{ item.email }}</td>
+      <td>{{ item.phone }}</td>
+      <td><button class="edit" (click)="openEditModal()">Edit</button></td>
+      <td><button class="delete" (click)="openDeleteModal(i)">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
