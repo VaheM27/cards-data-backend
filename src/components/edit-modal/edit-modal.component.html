@@ -1,1 +1,75 @@
-<p>edit-modal works!</p>
+<div class="container">
+  <div class="modalContent">
+    <div class="modal">
+      <div>
+        <form>
+          <div class="form-row">
+            <div class="col-sm-12 mb-3">
+              <label for="fullName">Name</label>
+              <input
+                formControlName="name"
+                type="text"
+                class="form-control"
+                id="Name"
+                placeholder="Name"
+                required
+              />
+            </div>
+          </div>
+
+          <hr class="border-dashed my-8" />
+
+          <div class="form-row">
+            <div class="col-sm-12 mb-3">
+              <label for="slug">Region</label>
+              <input
+                formControlName="region"
+                type="text"
+                class="form-control"
+                id="Region"
+                placeholder="Region"
+                required
+              />
+            </div>
+          </div>
+          <hr class="border-dashed my-8" />
+
+          <div class="form-row">
+            <div class="col-sm-12 mb-3">
+              <label for="fullName">Country</label>
+              <input
+                formControlName="country"
+                type="text"
+                class="form-control"
+                id="Country"
+                placeholder="Country"
+                required
+              />
+            </div>
+          </div>
+          <hr class="border-dashed my-8" />
+
+          <div class="form-row">
+            <div class="col-sm-12 mb-3">
+              <label for="fullName">Numberrange</label>
+              <input
+                formControlName="numberrange"
+                type="text"
+                class="form-control"
+                id="Numberrange"
+                placeholder="Numberrange"
+                required
+              />
+            </div>
+          </div>
+          <div>
+            <div class="container" style="display: flex">
+              <div><button>Save</button></div>
+              <div><button (click)="closeModal()">Close</button></div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

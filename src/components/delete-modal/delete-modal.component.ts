@@ -11,16 +11,14 @@ export class DeleteModalComponent implements OnInit {
   @Output() delete: EventEmitter<any> = new EventEmitter();
   constructor(public activeModal: NgbActiveModal) {}
 
-  ngOnInit(): void {
-    console.log(this.data[0].id);
-  }
+  ngOnInit(): void {}
 
   closeModal() {
     this.activeModal.close();
   }
 
   deleteItem() {
-    this.delete.emit(this.data);
+    this.delete.emit(this.data.id);
     this.closeModal();
   }
 }

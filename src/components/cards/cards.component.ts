@@ -9,7 +9,7 @@ import { v4 as uuidv4 } from 'uuid';
   styleUrls: ['./cards.component.scss'],
 })
 export class CardsComponent implements OnInit {
-  peopleList: any = [
+  peopleContacts: any = [
     {
       id: uuidv4(),
       email: 'at.velit@hotmail.com',
@@ -42,16 +42,20 @@ export class CardsComponent implements OnInit {
   ngOnInit(): void {}
 
   delete(id: any) {
-    this.peopleList = this.peopleList.filter((item: any) => item.id !== id);
+    this.peopleContacts = this.peopleContacts.filter(
+      (item: any) => item.id !== id
+    );
   }
 
   openDeleteModal(id: any) {
     const modalRef = this.modalService.open(DeleteModalComponent, {
       size: 'lg',
     });
-    modalRef.componentInstance.data = this.peopleList;
-    modalRef.componentInstance.delete.subscribe((res: any) => {
-      this.delete(res.id);
+    modalRef.componentInstance.data = this.peopleContacts.find(
+      (el: any) => el.id === id
+    );
+    modalRef.componentInstance.delete.subscribe((id: any) => {
+      this.delete(id);
     });
   }
 
