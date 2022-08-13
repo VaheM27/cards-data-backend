@@ -1,6 +1,6 @@
-import { DeleteModalComponent } from './../delete-modal/delete-modal.component';
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { DeleteModalComponent } from '../delete-modal/delete-modal.component';
 import { EditModalComponent } from '../edit-modal/edit-modal.component';
 import { v4 as uuidv4 } from 'uuid';
 @Component({

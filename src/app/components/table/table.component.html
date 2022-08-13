@@ -1,3 +1,8 @@
+<div class="addInfo">
+  <button class="add">
+    Add
+  </button>
+</div>
 <table class="comicGreen">
   <tr>
     <th>Name</th>
@@ -11,7 +16,7 @@
       <td>{{ item.region }}</td>
       <td>{{ item.country }}</td>
       <td>{{ item.numberrange }}</td>
-      <td><button class="edit" (click)="openEditModal(item)">Edit</button></td>
+      <td><button class="edit" (click)="openEditModal()">Edit</button></td>
       <td>
         <button class="delete" (click)="openDeleteModal(item.id)">
           Delete
