@@ -10,6 +10,8 @@ import { v4 as uuidv4 } from 'uuid';
   styleUrls: ['./table.component.scss'],
 })
 export class TableComponent implements OnInit {
+  editType = true;
+
   peopleList: any[] = [
     {
       id: uuidv4(),
@@ -68,8 +70,11 @@ export class TableComponent implements OnInit {
     });
   }
 
-  openEditModal() {
+  openEditModal(id: any) {
     const modalRef = this.modalService.open(EditModalComponent, { size: 'lg' });
-    modalRef.componentInstance.peopleList = this.peopleList;
+    modalRef.componentInstance.editType = this.editType;
+    modalRef.componentInstance.peopleList = this.peopleList.find(
+      (el: any) => el.id === id
+    );
   }
 }

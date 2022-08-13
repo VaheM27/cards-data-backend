@@ -1,7 +1,7 @@
 <div class="container">
   <div class="modalContent">
     <div class="modal">
-      <div class="form">
+      <div class="form" *ngIf="editType">
         <form class="formData">
           <div class="form-row">
             <div class="labels">
@@ -15,6 +15,7 @@
                 id="Name"
                 placeholder="Name"
                 required
+                value="{{ peopleList.name }}"
               />
             </div>
           </div>
@@ -33,6 +34,7 @@
                 id="Region"
                 placeholder="Region"
                 required
+                value="{{ peopleList.region }}"
               />
             </div>
           </div>
@@ -50,6 +52,7 @@
                 id="Country"
                 placeholder="Country"
                 required
+                value="{{ peopleList.country }}"
               />
             </div>
           </div>
@@ -67,6 +70,56 @@
                 id="Numberrange"
                 placeholder="Numberrange"
                 required
+                value="{{ peopleList.numberrange }}"
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="buttons">
+              <div class="container" style="display: flex">
+                <div><button class="save">Save</button></div>
+                <div>
+                  <button class="close" (click)="closeModal()">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="form" *ngIf="!editType">
+        <form class="formData">
+          <div class="form-row">
+            <div class="labels">
+              <label for="Name">Email</label>
+            </div>
+            <div class="inputs">
+              <input
+                formControlName="email"
+                type="text"
+                class="form-control"
+                id="Email"
+                placeholder="Email"
+                required
+                value="{{ peopleContacts.email }}"
+              />
+            </div>
+          </div>
+
+          <hr />
+
+          <div class="form-row">
+            <div class="labels">
+              <label for="Region">Phone</label>
+            </div>
+            <div class="inputs">
+              <input
+                formControlName="phone"
+                type="text"
+                class="form-control"
+                id="Phone"
+                placeholder="Phone"
+                required
+                value="{{ peopleContacts.phone }}"
               />
             </div>
           </div>

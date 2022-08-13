@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -8,6 +8,9 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class EditModalComponent implements OnInit {
   @Input() peopleList: any;
+  @Input() editType: any;
+  @Input() peopleContacts: any;
+  @Output() updateItem: EventEmitter<any> = new EventEmitter();
 
   constructor(public activeModal: NgbActiveModal) {}
 
@@ -18,4 +21,9 @@ export class EditModalComponent implements OnInit {
   closeModal() {
     this.activeModal.close();
   }
+
+  editItem() {
+    this.updateItem.emit(this.peopleContacts);
+  }
+
 }

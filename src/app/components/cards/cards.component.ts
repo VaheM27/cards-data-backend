@@ -47,6 +47,16 @@ export class CardsComponent implements OnInit {
     );
   }
 
+  updateItem(item: any){
+
+    let index = this.peopleContacts.indexOf(item);
+    item.name = "Change Hardik";
+    this.peopleContacts[index] = item;
+
+    console.log(this.peopleContacts);
+  }
+
+
   openDeleteModal(id: any) {
     const modalRef = this.modalService.open(DeleteModalComponent, {
       size: 'lg',
@@ -59,7 +69,13 @@ export class CardsComponent implements OnInit {
     });
   }
 
-  openEditModal() {
-    this.modalService.open(EditModalComponent, { size: 'lg' });
+  openEditModal(id: any) {
+    const modalRef = this.modalService.open(EditModalComponent, { size: 'lg' });
+    modalRef.componentInstance.peopleContacts = this.peopleContacts.find(
+      (el: any) => el.id === id
+    );
+    modalRef.componentInstance.updateItem.subscribe((id: any) => {
+      this.updateItem(id);
+    });
   }
 }
