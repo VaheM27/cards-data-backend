@@ -1,23 +1,12 @@
 <div class="addInfo">
-  <button class="add">Add</button>
+  <button class="add" (click)="setBlock()">Add</button>
+  <button class="add" (click)="sortCard()">Sort</button>
 </div>
-<table class="comicGreen">
-  <tr>
-    <th>Email</th>
-    <th>Phone</th>
-  </tr>
-  <tbody>
-    <tr *ngFor="let item of peopleContacts; let i = index">
-      <td>{{ item.email }}</td>
-      <td>{{ item.phone }}</td>
-      <td>
-        <button class="edit" (click)="openEditModal(item.id)">Edit</button>
-      </td>
-      <td>
-        <button class="delete" (click)="openDeleteModal(item.id)">
-          Delete
-        </button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="main">
+  <div class="container">
+    <div class="card" *ngFor="let item of block">
+      <p>{{ item.num }}</p>
+      <button class="btn" (click)="delete(item.id)">X</button>
+    </div>
+  </div>
+</div>

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { DeleteModalComponent } from '../delete-modal/delete-modal.component';
 import { EditModalComponent } from '../edit-modal/edit-modal.component';
 import { v4 as uuidv4 } from 'uuid';
+import { ApiService } from 'src/app/service/api.service';
 
 @Component({
   selector: 'app-table',
@@ -50,7 +51,7 @@ export class TableComponent implements OnInit {
     },
   ];
 
-  constructor(private modalService: NgbModal) {}
+  constructor(private modalService: NgbModal, private server: ApiService) {}
 
   ngOnInit(): void {}
 
