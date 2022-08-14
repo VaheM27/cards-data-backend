@@ -1,0 +1,20 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "For test task",
+  "main": "index.js",
+  "scripts": {
+    "serve": "ts-node-dev server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "VaheM27",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.13",
+    "express": "^4.18.1",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "tslint": "^6.1.3",
+    "typescript": "^4.7.4"
+  }
+}
